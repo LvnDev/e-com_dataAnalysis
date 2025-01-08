@@ -1,6 +1,11 @@
-import math
-from operator import truediv
+from logging import exception
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
+loaded_data = None #global variable for the loaded data
 
 def start_interface():
     print(f"\nPlease select your option \n 1. Load Data \n 2. process data \n 3. visualise data \n 4. export data \n 5. exit program")
@@ -15,14 +20,32 @@ def start_interface():
             print("Invalid input, enter a number with the following options: 1-5...")
 
 def load_data():
-    fileName = input("\n CASE SENSITIVE do not worry about adding .csv in the end \n Enter a .CSV file name: ")
+    filename = input("\n CASE SENSITIVE do not worry about adding .csv in the end \n Enter a .CSV file name: ")
+    global loaded_data
+    try:
+        loaded_data = pd.read_csv(f"{filename}.csv")
+        print(f"{loaded_data.head()}")
+        input("Press ENTER to continue...")
+        return
+    except FileNotFoundError:
+        print("File not found")
+        input("Press ENTER to continue...")
+        return
+    except Exception as e:
+        print(f"unexpected error: {e}")
+        input("Press ENTER to continue...")
+        return
 
 def process_data():
-    print("")
+    print("\nProcessing data...")
+
 
 def visualise_data():
     print("")
-
+    #conducting some small experiments of making bar chart.
+    '''category_sums = loaded_data.groupby("ProductCategory")['Quantity'].sum()
+    plt.bar(category_sums.index, category_sums.values)
+    plt.show()'''
 def export_data():
     print("")
 
