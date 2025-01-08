@@ -1,0 +1,501 @@
+TransactionID,CustomerID,StoreLocation,ProductCategory,ProductID,Quantity,UnitPrice,TransactionDate,PaymentMethod,DiscountApplied,CustomerSatisfaction,TotalPrice
+1,1399,City Centre,Other,687,9,447.54,2023-10-29,Credit Card,Yes,1,4027.86
+2,1326,Rural,Electronics,436,9,208.52,2023-08-15,Credit Card,No,5,1876.68
+3,1517,Suburban,Electronics,137,1,139.17,2023-11-25,Debit Card,No,5,139.17
+4,1740,Suburban,Other,370,9,450.57,2023-06-24,Cash,Yes,3,4055.13
+5,1587,Rural,Clothing,690,9,339.7,2023-04-04,Credit Card,Yes,1,3057.3
+6,1849,Suburban,Grocery,235,1,252.19,2024-07-18,Credit Card,No,5,252.19
+7,1692,Suburban,Clothing,206,1,54.51,2023-06-29,Debit Card,No,5,54.51
+8,1643,Rural,Other,181,10,289.86,2024-06-17,Cash,Yes,4,2898.6
+9,1855,City Centre,Electronics,247,5,353.49,2023-03-04,Cash,No,2,1767.45
+10,1041,City Centre,Grocery,124,2,154.96,2023-08-09,Debit Card,Yes,1,309.92
+11,1476,Suburban,Electronics,425,10,451.08,2023-01-14,Credit Card,Yes,1,4510.8
+12,1962,Rural,Other,418,9,169.84,2022-12-06,Cash,No,1,1528.56
+13,1995,Suburban,Grocery,626,9,176.51,2023-02-19,Debit Card,No,3,1588.59
+14,1207,Rural,Clothing,159,10,172.64,2023-10-01,Cash,Yes,4,1726.4
+15,1465,Rural,Electronics,564,4,303.37,2023-10-14,Mobile Payment,No,4,1213.48
+16,1980,Rural,Clothing,667,2,286.45,2024-01-22,Credit Card,Yes,2,572.9
+17,1420,Rural,Electronics,665,1,487.11,2022-11-20,Debit Card,Yes,4,487.11
+18,1083,Rural,Clothing,565,6,6.38,2023-12-18,Mobile Payment,No,3,38.28
+19,1149,Suburban,Grocery,191,3,411.84,2023-07-04,Debit Card,Yes,3,1235.52
+20,1233,Rural,Grocery,743,4,96.4,2024-03-10,Cash,No,3,385.6
+21,1325,Suburban,Grocery,405,2,114.34,2023-01-06,Mobile Payment,No,5,228.68
+22,1918,Suburban,Grocery,760,8,247.06,2024-08-14,Debit Card,Yes,5,1976.48
+23,1071,City Centre,Grocery,923,10,206.31,2023-05-09,Mobile Payment,No,5,2063.1
+24,1536,City Centre,Home Goods,832,5,308.67,2024-03-15,Credit Card,Yes,4,1543.35
+25,1522,City Centre,Other,336,10,306.44,2024-05-07,Cash,Yes,1,3064.4
+26,1459,Suburban,Clothing,275,7,302.23,2023-10-22,Credit Card,Yes,3,2115.61
+27,1676,Suburban,Home Goods,251,3,138.49,2024-04-07,Debit Card,No,2,415.47
+28,1670,City Centre,Electronics,525,10,331.8,2024-05-09,Credit Card,Yes,1,3318.0
+29,1924,Rural,Other,118,2,36.1,2024-01-07,Mobile Payment,Yes,4,72.2
+30,1187,Suburban,Electronics,854,2,55.33,2023-06-12,Credit Card,No,5,110.66
+31,1871,City Centre,Home Goods,545,1,152.04,2023-06-25,Credit Card,No,4,152.04
+32,1913,Rural,Grocery,937,6,330.29,2023-05-20,Debit Card,Yes,2,1981.74
+33,1894,Suburban,Grocery,509,5,480.01,2022-12-20,Cash,Yes,1,2400.05
+34,1279,Suburban,Grocery,882,2,404.08,2024-08-04,Mobile Payment,No,2,808.16
+35,1062,City Centre,Grocery,604,5,337.39,2024-05-04,Mobile Payment,Yes,2,1686.95
+36,1132,Rural,Other,878,2,306.74,2024-08-23,Credit Card,No,1,613.48
+37,1543,Suburban,Electronics,766,5,186.93,2023-08-21,Debit Card,Yes,1,934.65
+38,1177,Suburban,Home Goods,877,6,226.6,2024-04-24,Mobile Payment,No,3,1359.6
+39,1287,Rural,Clothing,799,2,330.97,2024-09-04,Cash,No,5,661.94
+40,1716,Suburban,Electronics,607,2,327.37,2023-04-24,Debit Card,No,1,654.74
+41,1310,City Centre,Home Goods,331,7,143.13,2023-06-16,Debit Card,No,5,1001.91
+42,1600,City Centre,Clothing,128,10,68.01,2024-08-06,Mobile Payment,No,5,680.1
+43,1228,City Centre,Clothing,135,5,20.11,2023-07-12,Mobile Payment,Yes,3,100.55
+44,1269,Rural,Electronics,291,2,484.63,2024-04-19,Mobile Payment,Yes,5,969.26
+45,1570,Rural,Home Goods,554,2,339.77,2023-01-06,Credit Card,No,2,679.54
+46,1911,Rural,Grocery,468,8,219.34,2023-10-11,Cash,Yes,1,1754.72
+47,1684,Rural,Other,398,8,364.64,2024-02-16,Debit Card,No,2,2917.12
+48,1734,Rural,Home Goods,415,5,367.02,2023-12-05,Debit Card,Yes,4,1835.1
+49,1819,Rural,Home Goods,488,3,328.92,2024-04-27,Cash,No,1,986.76
+50,1008,City Centre,Other,754,7,104.57,2024-06-23,Cash,No,2,731.99
+51,1157,City Centre,Electronics,282,5,165.94,2023-04-09,Cash,Yes,5,829.7
+52,1764,Rural,Other,589,6,14.94,2023-06-15,Credit Card,Yes,4,89.64
+53,1776,Rural,Home Goods,488,10,7.16,2023-05-29,Debit Card,Yes,1,71.6
+54,1415,Rural,Grocery,872,4,226.77,2023-08-24,Debit Card,Yes,2,907.08
+55,1297,City Centre,Other,361,4,88.1,2024-04-21,Debit Card,No,4,352.4
+56,1915,Suburban,Electronics,114,9,217.28,2022-12-10,Debit Card,No,2,1955.52
+57,1886,Rural,Other,555,6,160.84,2024-03-08,Cash,Yes,1,965.04
+58,1417,Rural,Other,272,9,236.15,2024-03-11,Mobile Payment,Yes,1,2125.35
+59,1079,Suburban,Home Goods,989,5,315.14,2023-03-15,Credit Card,No,2,1575.7
+60,1934,City Centre,Home Goods,451,9,19.12,2024-05-08,Debit Card,Yes,5,172.08
+61,1006,Rural,Grocery,510,1,105.37,2024-08-29,Debit Card,No,3,105.37
+62,1483,Rural,Grocery,531,1,499.22,2023-07-25,Mobile Payment,No,4,499.22
+63,1854,City Centre,Grocery,230,2,479.75,2024-10-14,Debit Card,Yes,2,959.5
+64,1421,Suburban,Other,968,4,53.22,2024-06-27,Debit Card,Yes,5,212.88
+65,1272,Suburban,Clothing,657,10,447.12,2024-06-03,Cash,No,1,4471.2
+66,1661,Suburban,Grocery,426,10,351.8,2023-01-19,Mobile Payment,Yes,4,3518.0
+67,1095,Suburban,Home Goods,422,3,146.64,2024-01-15,Debit Card,No,5,439.92
+68,1686,Rural,Other,135,1,457.51,2023-01-20,Credit Card,No,4,457.51
+69,1117,City Centre,Electronics,287,4,491.63,2023-09-13,Mobile Payment,Yes,2,1966.52
+70,1413,City Centre,Other,145,3,391.66,2023-09-02,Mobile Payment,Yes,4,1174.98
+71,1289,City Centre,Electronics,851,2,221.64,2023-10-08,Mobile Payment,Yes,3,443.28
+72,1481,Suburban,Electronics,756,3,170.86,2023-08-09,Debit Card,Yes,4,512.58
+73,1935,Suburban,Clothing,458,5,189.8,2023-04-11,Cash,No,1,949.0
+74,1601,Suburban,Other,242,4,91.04,2023-07-05,Mobile Payment,Yes,3,364.16
+75,1743,Suburban,Grocery,665,3,73.63,2024-07-03,Credit Card,Yes,4,220.89
+76,1638,Suburban,Clothing,165,3,426.53,2024-06-23,Cash,No,2,1279.59
+77,1698,City Centre,Grocery,250,2,142.19,2024-05-18,Credit Card,Yes,3,284.38
+78,1894,Rural,Home Goods,405,6,315.22,2023-10-16,Mobile Payment,No,2,1891.32
+79,1637,City Centre,Home Goods,941,7,329.63,2024-09-19,Mobile Payment,No,5,2307.41
+80,1156,Suburban,Electronics,707,10,211.77,2023-05-14,Cash,No,4,2117.7
+81,1686,City Centre,Grocery,903,2,278.65,2023-12-21,Cash,No,2,557.3
+82,1692,Rural,Electronics,825,2,492.69,2024-04-26,Credit Card,No,4,985.38
+83,1527,Rural,Electronics,186,2,396.88,2022-11-21,Cash,No,4,793.76
+84,1921,Rural,Home Goods,191,6,185.81,2023-09-28,Cash,No,2,1114.86
+85,1060,City Centre,Other,242,10,245.17,2023-02-17,Mobile Payment,Yes,3,2451.7
+86,1321,City Centre,Electronics,899,4,53.2,2024-02-15,Mobile Payment,Yes,3,212.8
+87,1413,Suburban,Electronics,384,6,79.43,2022-11-12,Credit Card,No,2,476.58
+88,1411,City Centre,Home Goods,911,4,419.96,2024-02-15,Cash,No,4,1679.84
+89,1297,Rural,Grocery,291,5,246.38,2023-07-24,Debit Card,Yes,2,1231.9
+90,1255,Rural,Grocery,446,4,428.57,2022-11-19,Mobile Payment,Yes,2,1714.28
+91,1310,Rural,Home Goods,957,4,359.53,2023-10-12,Debit Card,Yes,2,1438.12
+92,1328,Suburban,Clothing,599,5,349.04,2023-01-21,Credit Card,Yes,3,1745.2
+93,1366,Suburban,Home Goods,792,2,180.13,2024-09-12,Credit Card,No,1,360.26
+94,1596,Suburban,Clothing,535,2,447.22,2023-09-16,Mobile Payment,Yes,4,894.44
+95,1116,Rural,Other,949,10,233.67,2024-10-02,Credit Card,Yes,5,2336.7
+96,1890,Rural,Clothing,923,9,114.43,2024-02-22,Cash,Yes,3,1029.87
+97,1402,City Centre,Clothing,243,2,300.34,2023-04-29,Mobile Payment,No,3,600.68
+98,1461,Rural,Other,207,6,470.23,2023-11-18,Credit Card,No,2,2821.38
+99,1303,Rural,Home Goods,345,4,114.71,2023-08-29,Credit Card,Yes,5,458.84
+100,1647,Suburban,Grocery,473,7,253.16,2024-10-30,Mobile Payment,Yes,3,1772.12
+101,1311,Rural,Grocery,516,7,280.85,2024-03-30,Cash,No,2,1965.95
+102,1372,City Centre,Clothing,632,4,136.21,2023-12-06,Mobile Payment,Yes,4,544.84
+103,1581,Rural,Grocery,476,4,137.61,2023-07-18,Debit Card,Yes,3,550.44
+104,1557,Suburban,Home Goods,713,3,89.52,2023-07-30,Mobile Payment,No,4,268.56
+105,1656,City Centre,Electronics,518,4,383.85,2023-12-23,Debit Card,No,2,1535.4
+106,1600,Suburban,Other,869,8,356.02,2024-09-27,Cash,No,3,2848.16
+107,1833,Rural,Other,699,2,280.59,2023-11-29,Credit Card,Yes,1,561.18
+108,1379,Rural,Home Goods,756,1,213.83,2024-05-24,Debit Card,No,4,213.83
+109,1425,Rural,Other,107,8,212.78,2023-06-21,Debit Card,No,5,1702.24
+110,1752,City Centre,Home Goods,928,1,263.02,2023-07-18,Cash,No,3,263.02
+111,1544,City Centre,Home Goods,989,10,228.86,2023-10-09,Cash,Yes,1,2288.6
+112,1596,Suburban,Other,939,3,111.96,2023-02-18,Credit Card,No,3,335.88
+113,1916,Rural,Electronics,895,7,484.51,2023-08-31,Mobile Payment,Yes,2,3391.57
+114,1250,Rural,Home Goods,170,7,413.5,2023-06-22,Mobile Payment,Yes,3,2894.5
+115,1623,City Centre,Grocery,288,9,498.03,2024-03-30,Cash,No,2,4482.27
+116,1852,Rural,Grocery,441,9,365.56,2023-12-03,Cash,No,3,3290.04
+117,1869,City Centre,Grocery,456,1,168.07,2023-06-16,Credit Card,No,2,168.07
+118,1323,Rural,Home Goods,748,6,334.88,2023-02-21,Cash,Yes,2,2009.28
+119,1563,City Centre,Electronics,723,8,346.32,2023-09-22,Debit Card,No,3,2770.56
+120,1134,Suburban,Grocery,519,4,446.46,2024-01-05,Cash,Yes,4,1785.84
+121,1706,Rural,Home Goods,807,8,189.72,2024-05-20,Cash,Yes,5,1517.76
+122,1458,Suburban,Clothing,958,6,246.46,2024-04-23,Mobile Payment,No,3,1478.76
+123,1899,Rural,Other,383,5,119.37,2023-04-12,Mobile Payment,No,5,596.85
+124,1948,Suburban,Clothing,840,8,387.34,2023-03-02,Debit Card,No,1,3098.72
+125,1771,Suburban,Electronics,562,2,338.6,2022-11-21,Cash,Yes,1,677.2
+126,1591,Suburban,Clothing,707,8,124.22,2023-07-16,Cash,Yes,3,993.76
+127,1842,City Centre,Home Goods,329,1,19.65,2024-10-15,Debit Card,No,1,19.65
+128,1643,City Centre,Clothing,357,6,324.9,2023-03-14,Credit Card,Yes,4,1949.4
+129,1089,City Centre,Electronics,700,5,173.22,2023-04-20,Debit Card,Yes,1,866.1
+130,1983,Suburban,Home Goods,675,8,388.59,2023-03-25,Cash,No,3,3108.72
+131,1897,Suburban,Other,293,6,229.2,2023-01-29,Cash,Yes,5,1375.2
+132,1515,Rural,Other,448,3,351.72,2024-09-28,Credit Card,No,4,1055.16
+133,1809,City Centre,Clothing,419,8,379.86,2023-05-16,Mobile Payment,Yes,1,3038.88
+134,1274,Suburban,Other,739,9,217.25,2024-09-27,Credit Card,No,4,1955.25
+135,1075,City Centre,Home Goods,515,3,307.1,2024-08-02,Mobile Payment,Yes,2,921.3
+136,1103,City Centre,Clothing,403,4,482.37,2023-09-11,Credit Card,Yes,1,1929.48
+137,1849,City Centre,Grocery,140,10,268.17,2023-12-06,Debit Card,Yes,4,2681.7
+138,1782,Rural,Electronics,244,3,108.49,2023-02-04,Mobile Payment,Yes,1,325.47
+139,1369,Rural,Home Goods,822,10,344.9,2023-02-25,Mobile Payment,No,5,3449.0
+140,1352,Rural,Electronics,998,5,403.8,2024-08-01,Cash,No,5,2019.0
+141,1528,Suburban,Electronics,492,1,436.63,2024-09-26,Credit Card,No,1,436.63
+142,1563,Suburban,Clothing,585,5,354.82,2024-11-07,Mobile Payment,Yes,1,1774.1
+143,1135,Rural,Clothing,295,4,96.47,2024-06-10,Mobile Payment,No,3,385.88
+144,1819,Rural,Other,628,6,47.63,2023-10-13,Credit Card,Yes,4,285.78
+145,1278,Rural,Grocery,409,1,138.04,2023-06-29,Mobile Payment,No,1,138.04
+146,1236,Suburban,Clothing,465,4,434.22,2024-06-09,Credit Card,No,4,1736.88
+147,1107,City Centre,Other,943,5,490.77,2024-01-11,Cash,Yes,5,2453.85
+148,1517,City Centre,Home Goods,137,10,350.98,2023-01-13,Mobile Payment,Yes,4,3509.8
+149,1250,City Centre,Home Goods,437,9,194.16,2023-08-22,Credit Card,No,4,1747.44
+150,1503,Rural,Other,702,4,174.22,2024-05-26,Debit Card,Yes,2,696.88
+151,1654,Rural,Other,625,2,271.37,2024-02-22,Debit Card,No,3,542.74
+152,1321,City Centre,Other,911,9,216.39,2023-07-15,Cash,Yes,1,1947.51
+153,1722,Suburban,Clothing,818,2,57.84,2024-09-19,Credit Card,Yes,3,115.68
+154,1530,Rural,Clothing,246,9,357.78,2022-12-13,Cash,No,5,3220.02
+155,1427,Rural,Clothing,466,5,435.02,2024-07-01,Credit Card,Yes,3,2175.1
+156,1080,Suburban,Home Goods,186,1,6.96,2023-04-20,Debit Card,Yes,1,6.96
+157,1717,Rural,Electronics,858,8,265.97,2023-03-14,Cash,No,1,2127.76
+158,1598,City Centre,Clothing,242,4,125.77,2024-05-07,Mobile Payment,No,3,503.08
+159,1076,Rural,Clothing,837,1,17.07,2023-10-11,Debit Card,Yes,5,17.07
+160,1653,Rural,Home Goods,762,10,71.91,2024-05-18,Credit Card,No,5,719.1
+161,1461,Rural,Grocery,532,9,186.52,2024-08-03,Mobile Payment,Yes,5,1678.68
+162,1586,City Centre,Home Goods,661,5,165.59,2023-01-08,Credit Card,No,2,827.95
+163,1991,Suburban,Electronics,316,6,313.09,2024-07-30,Debit Card,No,2,1878.54
+164,1257,Rural,Other,509,2,495.91,2023-10-03,Debit Card,No,3,991.82
+165,1078,Rural,Other,216,3,477.95,2023-04-11,Debit Card,Yes,1,1433.85
+166,1043,City Centre,Home Goods,843,6,282.71,2023-10-04,Mobile Payment,No,5,1696.26
+167,1582,City Centre,Other,654,7,449.32,2023-06-24,Credit Card,Yes,3,3145.24
+168,1888,Suburban,Grocery,849,7,41.66,2024-06-25,Mobile Payment,Yes,4,291.62
+169,1266,Suburban,Other,586,4,494.19,2023-08-14,Mobile Payment,No,2,1976.76
+170,1878,City Centre,Grocery,793,7,97.41,2022-11-13,Credit Card,Yes,3,681.87
+171,1121,Suburban,Home Goods,505,10,166.14,2023-05-21,Mobile Payment,Yes,4,1661.4
+172,1720,City Centre,Electronics,730,6,218.84,2022-11-28,Credit Card,Yes,3,1313.04
+173,1218,Rural,Electronics,487,4,120.75,2023-08-18,Credit Card,No,2,483.0
+174,1214,City Centre,Grocery,371,2,133.09,2023-02-22,Debit Card,No,2,266.18
+175,1713,City Centre,Other,178,10,359.91,2023-03-11,Cash,No,2,3599.1
+176,1292,Suburban,Electronics,693,1,355.06,2023-05-19,Credit Card,No,5,355.06
+177,1419,Suburban,Home Goods,446,2,479.74,2023-02-02,Debit Card,Yes,3,959.48
+178,1194,City Centre,Grocery,532,7,466.77,2023-08-27,Cash,Yes,5,3267.39
+179,1251,City Centre,Grocery,469,2,32.59,2023-10-08,Mobile Payment,Yes,4,65.18
+180,1869,Suburban,Grocery,292,9,478.67,2024-03-06,Credit Card,Yes,1,4308.03
+181,1751,Rural,Home Goods,877,6,70.39,2024-06-07,Debit Card,Yes,5,422.34
+182,1350,Rural,Home Goods,320,5,216.88,2024-08-06,Cash,No,4,1084.4
+183,1580,City Centre,Clothing,808,6,105.11,2024-03-25,Mobile Payment,Yes,2,630.66
+184,1893,Rural,Clothing,422,2,426.83,2024-02-05,Credit Card,No,3,853.66
+185,1793,City Centre,Other,493,9,56.49,2024-02-19,Credit Card,Yes,3,508.41
+186,1507,Suburban,Clothing,296,8,158.88,2024-03-04,Mobile Payment,No,4,1271.04
+187,1372,Suburban,Grocery,766,6,30.2,2024-10-13,Mobile Payment,Yes,1,181.2
+188,1067,City Centre,Grocery,666,5,20.35,2024-04-28,Credit Card,Yes,5,101.75
+189,1684,City Centre,Grocery,917,9,11.6,2024-09-12,Debit Card,No,1,104.4
+190,1687,Suburban,Grocery,908,9,230.05,2023-12-29,Cash,No,3,2070.45
+191,1822,Rural,Home Goods,262,2,283.15,2022-12-27,Cash,Yes,1,566.3
+192,1475,Suburban,Grocery,963,4,260.86,2024-03-22,Debit Card,Yes,4,1043.44
+193,1593,Suburban,Home Goods,645,6,300.76,2024-10-08,Credit Card,Yes,5,1804.56
+194,1897,City Centre,Home Goods,538,8,345.04,2024-03-09,Credit Card,No,3,2760.32
+195,1070,Suburban,Other,158,3,103.49,2023-09-26,Cash,No,5,310.47
+196,1269,City Centre,Clothing,577,9,470.9,2023-03-25,Debit Card,Yes,5,4238.1
+197,1186,City Centre,Home Goods,399,8,256.22,2023-11-21,Cash,Yes,2,2049.76
+198,1765,Rural,Clothing,249,9,170.72,2023-01-18,Credit Card,Yes,4,1536.48
+199,1097,Suburban,Electronics,413,3,482.06,2023-08-08,Cash,No,4,1446.18
+200,1119,Rural,Grocery,491,4,27.19,2023-02-25,Cash,Yes,5,108.76
+201,1855,Suburban,Other,186,10,242.45,2024-04-10,Credit Card,Yes,3,2424.5
+202,1753,Rural,Electronics,277,9,126.08,2023-01-31,Credit Card,No,5,1134.72
+203,1509,Rural,Electronics,925,3,490.46,2024-03-08,Credit Card,Yes,3,1471.38
+204,1423,City Centre,Other,836,7,217.12,2024-01-19,Cash,No,3,1519.84
+205,1292,Rural,Grocery,774,4,248.64,2023-11-20,Credit Card,No,5,994.56
+206,1956,City Centre,Clothing,882,8,145.63,2024-05-04,Cash,No,5,1165.04
+207,1787,Rural,Electronics,387,9,57.88,2024-01-10,Cash,No,2,520.92
+208,1199,Suburban,Electronics,842,4,357.24,2024-11-05,Credit Card,No,3,1428.96
+209,1165,City Centre,Grocery,658,1,250.54,2024-09-07,Debit Card,Yes,4,250.54
+210,1960,Suburban,Grocery,377,6,111.67,2024-06-13,Mobile Payment,Yes,1,670.02
+211,1154,Suburban,Electronics,832,6,425.97,2023-09-04,Credit Card,Yes,3,2555.82
+212,1850,Rural,Grocery,663,2,166.76,2023-01-04,Credit Card,No,4,333.52
+213,1617,Suburban,Other,675,1,21.67,2024-10-18,Cash,No,3,21.67
+214,1007,Rural,Grocery,857,1,462.39,2023-05-01,Cash,No,4,462.39
+215,1493,Suburban,Other,547,5,433.5,2024-02-26,Mobile Payment,No,4,2167.5
+216,1082,Suburban,Other,127,7,304.66,2023-06-23,Mobile Payment,No,2,2132.62
+217,1622,City Centre,Home Goods,742,6,221.03,2023-08-27,Mobile Payment,No,4,1326.18
+218,1863,Rural,Grocery,646,10,448.09,2023-04-02,Credit Card,No,1,4480.9
+219,1528,City Centre,Other,852,10,225.12,2023-11-30,Mobile Payment,No,1,2251.2
+220,1463,Suburban,Home Goods,367,4,408.44,2023-10-09,Debit Card,Yes,1,1633.76
+221,1744,Suburban,Other,880,9,159.93,2023-10-07,Mobile Payment,Yes,3,1439.37
+222,1149,Rural,Clothing,396,3,390.85,2023-07-07,Debit Card,No,4,1172.55
+223,1370,Suburban,Home Goods,618,8,157.03,2023-08-12,Cash,No,3,1256.24
+224,2000,Rural,Electronics,645,9,255.18,2023-07-03,Credit Card,No,5,2296.62
+225,1349,City Centre,Electronics,509,10,220.9,2023-05-21,Debit Card,Yes,5,2209.0
+226,1088,Suburban,Grocery,597,1,72.82,2024-04-20,Mobile Payment,Yes,3,72.82
+227,1214,City Centre,Grocery,215,5,192.34,2024-07-29,Mobile Payment,Yes,4,961.7
+228,1533,Rural,Grocery,428,6,84.61,2022-12-19,Mobile Payment,No,2,507.66
+229,1899,Rural,Grocery,189,9,156.01,2022-11-17,Mobile Payment,No,1,1404.09
+230,1635,Suburban,Grocery,342,7,204.58,2024-03-09,Cash,Yes,5,1432.06
+231,1842,City Centre,Clothing,505,9,165.71,2024-06-09,Mobile Payment,Yes,5,1491.39
+232,1728,Suburban,Grocery,365,8,427.33,2023-07-12,Debit Card,No,4,3418.64
+233,1600,City Centre,Electronics,527,8,429.87,2023-09-27,Credit Card,No,3,3438.96
+234,1886,Suburban,Electronics,846,3,411.7,2024-11-06,Cash,Yes,1,1235.1
+235,1369,Suburban,Other,190,6,37.05,2023-02-27,Credit Card,No,4,222.3
+236,1012,Suburban,Home Goods,253,8,221.93,2023-10-07,Cash,Yes,1,1775.44
+237,1304,City Centre,Home Goods,354,5,28.54,2023-12-07,Mobile Payment,No,3,142.7
+238,1931,Suburban,Electronics,913,5,20.95,2022-12-08,Credit Card,No,5,104.75
+239,1637,City Centre,Grocery,762,6,401.18,2024-09-04,Mobile Payment,Yes,2,2407.08
+240,1820,City Centre,Grocery,591,1,281.15,2023-07-08,Credit Card,Yes,1,281.15
+241,1671,Rural,Electronics,203,10,198.08,2023-06-14,Credit Card,Yes,4,1980.8
+242,1364,Rural,Other,782,9,34.55,2024-05-04,Credit Card,Yes,4,310.95
+243,1910,Suburban,Electronics,680,5,266.69,2023-08-11,Debit Card,Yes,3,1333.45
+244,1891,Rural,Clothing,844,7,184.27,2024-04-07,Debit Card,Yes,1,1289.89
+245,1033,Rural,Clothing,383,3,245.35,2024-01-29,Debit Card,No,3,736.05
+246,1757,Suburban,Other,257,3,128.48,2024-01-10,Credit Card,No,3,385.44
+247,1042,Suburban,Electronics,380,4,451.56,2024-01-01,Cash,No,3,1806.24
+248,1006,Rural,Clothing,401,7,283.44,2023-03-02,Cash,Yes,3,1984.08
+249,1487,City Centre,Home Goods,232,8,434.39,2024-07-06,Cash,Yes,5,3475.12
+250,1026,City Centre,Grocery,944,10,72.26,2023-07-23,Debit Card,Yes,4,722.6
+251,1182,City Centre,Electronics,156,7,337.59,2023-07-17,Cash,Yes,1,2363.13
+252,1487,Suburban,Other,646,8,156.92,2023-09-05,Cash,Yes,4,1255.36
+253,1301,City Centre,Home Goods,115,6,251.28,2023-01-17,Mobile Payment,No,5,1507.68
+254,1584,Rural,Home Goods,524,10,318.35,2024-10-07,Debit Card,No,1,3183.5
+255,1513,Suburban,Other,645,1,270.7,2023-11-04,Mobile Payment,No,5,270.7
+256,1308,Rural,Home Goods,607,7,182.91,2024-03-17,Debit Card,Yes,1,1280.37
+257,1022,Suburban,Home Goods,650,8,227.08,2024-08-18,Mobile Payment,No,5,1816.64
+258,1468,City Centre,Grocery,255,8,261.59,2023-10-21,Cash,Yes,2,2092.72
+259,1930,Rural,Home Goods,501,7,281.45,2023-09-24,Debit Card,Yes,2,1970.15
+260,1950,City Centre,Clothing,547,3,56.28,2022-12-13,Debit Card,No,1,168.84
+261,1896,Suburban,Home Goods,120,6,430.15,2023-06-10,Credit Card,Yes,5,2580.9
+262,1950,Suburban,Other,811,1,145.75,2023-08-01,Credit Card,No,1,145.75
+263,1658,Rural,Other,681,9,287.83,2023-09-11,Cash,Yes,5,2590.47
+264,1064,City Centre,Grocery,995,7,17.05,2023-01-17,Cash,Yes,5,119.35
+265,1107,Rural,Electronics,732,7,269.15,2024-01-05,Credit Card,Yes,1,1884.05
+266,1823,City Centre,Grocery,261,4,477.85,2023-08-26,Credit Card,No,1,1911.4
+267,1742,City Centre,Other,995,1,249.1,2023-12-10,Credit Card,Yes,5,249.1
+268,1139,Rural,Home Goods,815,9,348.92,2023-10-24,Credit Card,No,5,3140.28
+269,1184,Suburban,Electronics,797,10,269.9,2024-08-03,Cash,No,1,2699.0
+270,1923,Suburban,Home Goods,129,8,224.5,2024-04-06,Debit Card,Yes,4,1796.0
+271,1078,Rural,Other,153,4,79.9,2024-08-06,Cash,No,2,319.6
+272,1572,City Centre,Grocery,726,4,438.79,2024-09-16,Credit Card,No,1,1755.16
+273,1203,Rural,Grocery,851,6,427.35,2023-07-02,Mobile Payment,Yes,3,2564.1
+274,1081,City Centre,Clothing,479,9,88.2,2023-02-24,Credit Card,No,1,793.8
+275,1265,Suburban,Electronics,640,10,313.61,2024-06-18,Mobile Payment,No,5,3136.1
+276,1566,City Centre,Clothing,333,10,152.34,2024-07-16,Mobile Payment,Yes,2,1523.4
+277,1488,City Centre,Home Goods,273,10,143.42,2024-05-30,Mobile Payment,Yes,5,1434.2
+278,1469,Suburban,Electronics,274,3,243.58,2023-06-18,Cash,No,3,730.74
+279,1612,City Centre,Electronics,821,8,481.85,2023-10-10,Cash,No,2,3854.8
+280,1435,City Centre,Grocery,110,4,304.71,2024-01-30,Cash,No,2,1218.84
+281,1152,Suburban,Grocery,910,10,438.59,2023-10-11,Cash,Yes,5,4385.9
+282,1859,Rural,Electronics,419,2,85.95,2024-01-12,Mobile Payment,Yes,3,171.9
+283,1187,Rural,Other,833,7,234.69,2024-01-27,Cash,Yes,5,1642.83
+284,1012,Rural,Home Goods,140,3,142.85,2024-07-14,Cash,Yes,2,428.55
+285,1128,Rural,Other,554,2,257.56,2024-07-29,Debit Card,No,3,515.12
+286,1372,City Centre,Electronics,235,6,51.98,2022-12-14,Debit Card,No,2,311.88
+287,1566,Suburban,Home Goods,232,8,162.62,2024-01-02,Cash,Yes,5,1300.96
+288,1020,Rural,Grocery,732,5,440.54,2024-07-16,Credit Card,No,3,2202.7
+289,1709,City Centre,Clothing,920,5,188.5,2024-01-29,Cash,Yes,4,942.5
+290,1273,Suburban,Clothing,953,3,266.68,2024-01-14,Mobile Payment,No,4,800.04
+291,1322,Rural,Other,308,1,361.06,2024-02-26,Cash,No,1,361.06
+292,1998,City Centre,Home Goods,428,1,327.95,2024-05-30,Mobile Payment,No,5,327.95
+293,1715,City Centre,Grocery,581,5,138.47,2023-05-09,Cash,No,5,692.35
+294,1693,Suburban,Clothing,582,8,142.89,2023-07-16,Debit Card,No,5,1143.12
+295,1653,City Centre,Clothing,302,6,145.22,2023-04-15,Debit Card,No,4,871.32
+296,1926,City Centre,Other,776,2,72.44,2023-06-26,Debit Card,Yes,2,144.88
+297,1109,Rural,Other,659,5,313.94,2023-01-17,Mobile Payment,No,3,1569.7
+298,1519,Rural,Home Goods,829,2,445.64,2023-04-26,Mobile Payment,Yes,4,891.28
+299,1251,Suburban,Other,959,7,202.09,2023-12-26,Credit Card,Yes,5,1414.63
+300,1685,City Centre,Other,628,9,213.09,2023-12-21,Cash,Yes,5,1917.81
+301,1127,City Centre,Clothing,897,4,462.32,2024-09-01,Cash,No,1,1849.28
+302,1010,City Centre,Other,345,8,195.5,2024-08-13,Cash,Yes,4,1564.0
+303,1547,City Centre,Home Goods,368,4,311.32,2024-08-24,Credit Card,Yes,5,1245.28
+304,1885,Rural,Grocery,615,2,274.29,2022-12-11,Cash,Yes,4,548.58
+305,1088,City Centre,Home Goods,314,5,99.42,2024-06-24,Debit Card,Yes,2,497.1
+306,1987,City Centre,Grocery,434,10,496.5,2024-06-27,Credit Card,No,1,4965.0
+307,1964,Suburban,Electronics,205,1,347.06,2023-02-18,Cash,No,1,347.06
+308,1196,Rural,Electronics,311,1,245.91,2023-03-22,Cash,Yes,3,245.91
+309,1691,Rural,Grocery,774,2,403.39,2024-01-09,Credit Card,No,4,806.78
+310,1884,City Centre,Clothing,104,2,182.59,2024-03-04,Cash,Yes,4,365.18
+311,1706,Suburban,Home Goods,118,7,431.56,2024-02-20,Credit Card,No,1,3020.92
+312,1326,City Centre,Clothing,838,1,24.35,2023-10-29,Debit Card,No,1,24.35
+313,1631,Rural,Clothing,137,3,268.56,2024-01-21,Mobile Payment,Yes,2,805.68
+314,1296,Suburban,Grocery,704,7,431.63,2023-11-23,Cash,Yes,4,3021.41
+315,1943,Suburban,Clothing,662,2,309.24,2023-01-11,Cash,Yes,2,618.48
+316,1172,Rural,Clothing,402,7,8.08,2023-08-27,Debit Card,No,3,56.56
+317,1111,Suburban,Electronics,886,5,150.2,2024-09-07,Cash,No,5,751.0
+318,1983,City Centre,Other,264,5,454.1,2023-09-26,Credit Card,Yes,5,2270.5
+319,1828,City Centre,Other,449,10,22.29,2023-09-26,Cash,No,4,222.9
+320,1753,Rural,Home Goods,594,5,191.44,2024-04-20,Mobile Payment,No,1,957.2
+321,1312,Suburban,Home Goods,894,3,309.2,2022-12-15,Mobile Payment,No,5,927.6
+322,1410,Suburban,Clothing,766,4,59.74,2023-03-27,Mobile Payment,Yes,5,238.96
+323,1002,Suburban,Other,863,3,253.11,2024-08-28,Mobile Payment,No,5,759.33
+324,1819,Suburban,Electronics,753,6,142.29,2024-06-05,Debit Card,Yes,1,853.74
+325,1903,City Centre,Electronics,782,1,448.46,2024-05-02,Debit Card,Yes,5,448.46
+326,1437,Suburban,Home Goods,152,9,156.12,2023-01-11,Mobile Payment,Yes,1,1405.08
+327,1974,Rural,Grocery,813,3,423.18,2024-11-07,Mobile Payment,Yes,4,1269.54
+328,1571,Rural,Clothing,496,9,367.6,2024-05-24,Cash,No,5,3308.4
+329,1911,Suburban,Other,792,4,457.27,2023-06-28,Cash,Yes,5,1829.08
+330,1828,Rural,Other,918,3,161.6,2022-11-18,Cash,Yes,4,484.8
+331,1665,City Centre,Clothing,598,5,186.66,2023-06-25,Credit Card,No,3,933.3
+332,1347,Suburban,Other,641,4,319.86,2023-10-04,Cash,No,1,1279.44
+333,1118,Suburban,Grocery,882,2,43.63,2024-02-26,Cash,Yes,3,87.26
+334,1098,Rural,Electronics,443,2,181.4,2022-11-23,Cash,Yes,5,362.8
+335,1477,Suburban,Electronics,153,10,93.72,2023-08-26,Mobile Payment,Yes,4,937.2
+336,1175,City Centre,Grocery,411,7,297.93,2023-08-10,Credit Card,Yes,2,2085.51
+337,1628,City Centre,Clothing,533,2,330.79,2023-03-10,Debit Card,Yes,5,661.58
+338,1335,Suburban,Clothing,835,4,174.53,2023-08-01,Mobile Payment,Yes,2,698.12
+339,1950,Suburban,Electronics,172,4,94.08,2024-11-02,Mobile Payment,Yes,5,376.32
+340,1920,City Centre,Grocery,364,9,214.77,2023-04-29,Debit Card,No,3,1932.93
+341,1180,City Centre,Clothing,705,7,150.61,2024-08-30,Cash,Yes,4,1054.27
+342,1917,Rural,Electronics,754,9,134.83,2023-01-14,Debit Card,Yes,3,1213.47
+343,1688,Rural,Clothing,176,9,348.33,2023-03-19,Debit Card,Yes,2,3134.97
+344,1023,Rural,Other,714,10,224.2,2024-08-18,Debit Card,Yes,3,2242.0
+345,1385,City Centre,Home Goods,716,6,102.08,2024-08-20,Mobile Payment,Yes,2,612.48
+346,1400,Rural,Home Goods,888,7,450.76,2024-10-08,Cash,No,1,3155.32
+347,1824,Rural,Electronics,137,4,445.69,2023-06-26,Debit Card,No,1,1782.76
+348,1633,Rural,Grocery,259,3,33.1,2022-11-28,Credit Card,No,3,99.3
+349,1230,Rural,Electronics,138,7,498.27,2024-02-13,Debit Card,Yes,2,3487.89
+350,1192,City Centre,Home Goods,832,8,382.59,2024-03-04,Cash,No,1,3060.72
+351,1234,Suburban,Grocery,336,7,198.09,2024-01-05,Cash,No,1,1386.63
+352,1225,Suburban,Clothing,435,5,329.73,2024-04-24,Cash,Yes,2,1648.65
+353,1838,Rural,Home Goods,889,5,58.79,2024-09-26,Cash,Yes,4,293.95
+354,1341,Suburban,Grocery,807,2,410.21,2024-08-26,Debit Card,Yes,2,820.42
+355,1468,Rural,Other,196,2,209.26,2023-04-03,Mobile Payment,No,4,418.52
+356,1412,Rural,Home Goods,596,8,382.92,2024-05-09,Debit Card,No,3,3063.36
+357,1218,Suburban,Clothing,403,2,380.09,2024-02-04,Credit Card,Yes,5,760.18
+358,1836,Suburban,Other,228,2,245.46,2023-02-07,Mobile Payment,Yes,5,490.92
+359,1362,Rural,Other,881,4,392.81,2023-09-16,Credit Card,Yes,3,1571.24
+360,1281,Suburban,Grocery,412,8,448.84,2024-06-06,Credit Card,No,2,3590.72
+361,1794,Suburban,Grocery,571,10,235.04,2024-02-28,Cash,No,1,2350.4
+362,1003,Rural,Electronics,689,2,463.02,2024-08-25,Cash,No,2,926.04
+363,1151,Suburban,Grocery,569,2,275.66,2024-10-14,Cash,No,4,551.32
+364,1736,Suburban,Other,291,9,442.02,2023-05-06,Debit Card,No,3,3978.18
+365,1044,Rural,Home Goods,296,4,91.87,2022-11-23,Mobile Payment,No,4,367.48
+366,1286,Rural,Other,832,10,179.6,2024-01-21,Credit Card,No,4,1796.0
+367,1532,City Centre,Electronics,337,5,442.82,2024-08-06,Credit Card,No,4,2214.1
+368,1614,City Centre,Grocery,516,2,145.09,2024-01-10,Credit Card,No,2,290.18
+369,1337,Rural,Grocery,327,1,208.5,2023-04-28,Debit Card,No,5,208.5
+370,1450,Suburban,Electronics,482,10,394.04,2023-01-26,Credit Card,No,2,3940.4
+371,1233,Rural,Home Goods,661,3,229.03,2023-09-09,Mobile Payment,Yes,3,687.09
+372,1173,Rural,Grocery,205,7,497.21,2023-05-18,Mobile Payment,No,2,3480.47
+373,1744,Rural,Home Goods,418,9,242.3,2023-02-28,Credit Card,No,4,2180.7
+374,1655,Suburban,Other,556,5,177.86,2024-03-29,Credit Card,No,5,889.3
+375,1069,Rural,Other,638,6,265.47,2023-01-08,Mobile Payment,No,4,1592.82
+376,1605,Rural,Grocery,745,1,481.51,2024-08-22,Debit Card,Yes,1,481.51
+377,1622,Suburban,Electronics,521,9,142.97,2024-03-21,Mobile Payment,Yes,1,1286.73
+378,1389,City Centre,Grocery,970,8,155.07,2022-11-18,Mobile Payment,Yes,1,1240.56
+379,1959,City Centre,Other,426,9,176.77,2024-01-12,Cash,Yes,3,1590.93
+380,1472,City Centre,Home Goods,425,6,241.94,2024-06-13,Cash,Yes,1,1451.64
+381,1922,Rural,Electronics,168,8,325.43,2023-12-29,Debit Card,No,4,2603.44
+382,1366,City Centre,Home Goods,135,5,499.41,2024-04-04,Mobile Payment,No,4,2497.05
+383,1712,Rural,Electronics,906,8,246.9,2023-05-22,Credit Card,Yes,3,1975.2
+384,1421,Rural,Other,207,1,135.12,2023-06-28,Mobile Payment,No,5,135.12
+385,1355,City Centre,Grocery,249,2,498.58,2024-09-23,Credit Card,No,4,997.16
+386,1763,City Centre,Other,589,2,83.0,2024-01-18,Credit Card,No,5,166.0
+387,1828,Suburban,Home Goods,989,3,21.82,2023-03-19,Credit Card,No,4,65.46
+388,1648,City Centre,Other,547,9,349.77,2023-10-29,Mobile Payment,Yes,1,3147.93
+389,1841,City Centre,Home Goods,200,7,354.07,2023-12-16,Mobile Payment,No,5,2478.49
+390,1100,Suburban,Electronics,576,3,165.9,2024-05-04,Mobile Payment,No,3,497.7
+391,1658,Rural,Electronics,525,4,341.87,2022-11-21,Credit Card,No,2,1367.48
+392,1240,City Centre,Clothing,275,7,404.27,2023-08-25,Mobile Payment,No,5,2829.89
+393,1137,City Centre,Home Goods,368,2,108.48,2023-01-17,Debit Card,Yes,5,216.96
+394,1066,Rural,Clothing,585,4,303.63,2024-01-26,Mobile Payment,No,2,1214.52
+395,1993,Suburban,Home Goods,725,6,355.77,2024-08-26,Debit Card,No,5,2134.62
+396,1899,Rural,Home Goods,803,8,278.08,2023-02-25,Debit Card,Yes,3,2224.64
+397,1192,Suburban,Electronics,598,10,182.06,2023-07-26,Credit Card,Yes,4,1820.6
+398,1456,Suburban,Grocery,505,1,237.09,2023-08-01,Mobile Payment,Yes,5,237.09
+399,2000,Suburban,Clothing,550,7,382.41,2023-09-09,Credit Card,Yes,2,2676.87
+400,1776,Suburban,Other,497,8,253.68,2023-04-13,Mobile Payment,No,1,2029.44
+401,1697,Suburban,Electronics,702,4,443.65,2023-02-28,Cash,No,3,1774.6
+402,1619,Suburban,Other,745,10,49.83,2024-05-18,Cash,No,2,498.3
+403,1068,Rural,Electronics,260,3,69.54,2024-06-11,Debit Card,Yes,5,208.62
+404,1659,Rural,Electronics,469,2,274.77,2024-02-04,Debit Card,Yes,5,549.54
+405,1902,Rural,Clothing,678,4,331.55,2023-02-07,Cash,Yes,4,1326.2
+406,1820,Suburban,Home Goods,924,7,348.72,2024-08-11,Debit Card,Yes,2,2441.04
+407,1519,Suburban,Electronics,486,6,63.44,2023-10-31,Credit Card,Yes,4,380.64
+408,1664,City Centre,Home Goods,852,1,479.95,2024-11-03,Mobile Payment,No,4,479.95
+409,1814,City Centre,Clothing,229,4,311.88,2024-07-03,Credit Card,No,1,1247.52
+410,1280,City Centre,Clothing,359,8,272.33,2024-08-25,Mobile Payment,No,4,2178.64
+411,1049,City Centre,Clothing,159,2,120.44,2023-02-05,Mobile Payment,No,5,240.88
+412,1071,Rural,Grocery,127,2,241.44,2022-12-17,Debit Card,No,4,482.88
+413,1925,Rural,Clothing,649,9,296.27,2023-03-08,Mobile Payment,Yes,1,2666.43
+414,1561,Rural,Other,507,2,381.41,2024-05-23,Credit Card,Yes,5,762.82
+415,1928,City Centre,Other,681,6,316.93,2022-12-20,Cash,No,2,1901.58
+416,1023,Suburban,Home Goods,685,4,41.43,2022-12-26,Credit Card,Yes,2,165.72
+417,1733,Suburban,Grocery,295,3,447.0,2024-08-17,Debit Card,Yes,2,1341.0
+418,1714,Rural,Home Goods,648,8,356.46,2023-05-15,Mobile Payment,Yes,5,2851.68
+419,1890,Rural,Grocery,440,6,477.92,2024-03-04,Credit Card,Yes,4,2867.52
+420,1081,City Centre,Electronics,422,7,451.6,2023-01-22,Mobile Payment,Yes,2,3161.2
+421,1326,Rural,Home Goods,741,2,376.52,2022-11-14,Mobile Payment,No,3,753.04
+422,1648,Rural,Grocery,196,2,121.49,2023-06-09,Debit Card,No,2,242.98
+423,1851,City Centre,Electronics,768,1,164.12,2023-10-30,Cash,Yes,5,164.12
+424,1010,City Centre,Home Goods,722,3,169.02,2024-03-26,Debit Card,Yes,1,507.06
+425,1684,Rural,Grocery,218,8,15.75,2022-11-16,Cash,No,3,126.0
+426,1255,Suburban,Clothing,894,1,413.03,2024-11-02,Debit Card,Yes,3,413.03
+427,1636,City Centre,Clothing,699,8,20.1,2023-07-06,Mobile Payment,Yes,1,160.8
+428,1330,Rural,Clothing,487,9,353.4,2024-03-12,Credit Card,Yes,1,3180.6
+429,1553,Rural,Electronics,916,6,321.94,2022-11-27,Mobile Payment,No,4,1931.64
+430,1484,City Centre,Clothing,997,5,448.53,2023-12-15,Debit Card,Yes,2,2242.65
+431,1296,Suburban,Other,392,10,394.93,2023-06-05,Cash,No,1,3949.3
+432,1365,Rural,Other,830,5,418.11,2023-06-18,Credit Card,Yes,2,2090.55
+433,1326,City Centre,Grocery,131,8,7.91,2023-06-11,Credit Card,No,1,63.28
+434,1672,Suburban,Other,193,3,187.98,2024-10-08,Credit Card,No,4,563.94
+435,1835,Suburban,Other,510,10,167.22,2024-01-16,Mobile Payment,Yes,3,1672.2
+436,1238,Rural,Home Goods,629,4,359.15,2023-05-26,Mobile Payment,Yes,1,1436.6
+437,1308,Suburban,Grocery,697,5,358.91,2024-03-07,Credit Card,No,1,1794.55
+438,1667,City Centre,Home Goods,490,5,38.73,2023-12-13,Credit Card,No,2,193.65
+439,1354,Rural,Grocery,906,7,373.39,2023-09-25,Debit Card,No,1,2613.73
+440,1095,Suburban,Grocery,835,9,266.63,2024-01-08,Credit Card,Yes,1,2399.67
+441,1068,Rural,Home Goods,997,5,303.59,2023-03-29,Debit Card,Yes,5,1517.95
+442,1951,Rural,Electronics,506,1,308.99,2023-09-30,Mobile Payment,No,4,308.99
+443,1223,Rural,Clothing,923,9,155.35,2023-08-03,Credit Card,Yes,2,1398.15
+444,1421,Suburban,Home Goods,879,9,19.12,2023-06-04,Mobile Payment,Yes,5,172.08
+445,1260,Suburban,Grocery,568,3,423.6,2023-08-01,Cash,No,4,1270.8
+446,1512,Rural,Electronics,293,5,91.34,2023-12-10,Cash,No,1,456.7
+447,1053,Suburban,Clothing,649,3,15.15,2024-02-29,Cash,No,5,45.45
+448,1615,Suburban,Electronics,998,9,143.7,2023-07-31,Debit Card,Yes,1,1293.3
+449,1598,Suburban,Clothing,687,4,381.25,2024-05-25,Debit Card,Yes,5,1525.0
+450,1999,Suburban,Other,761,2,193.81,2023-02-03,Mobile Payment,No,2,387.62
+451,1870,City Centre,Electronics,922,2,243.42,2022-12-12,Cash,No,1,486.84
+452,1183,Rural,Home Goods,448,9,184.02,2024-03-29,Debit Card,Yes,1,1656.18
+453,1893,Suburban,Electronics,752,8,386.25,2024-04-17,Mobile Payment,Yes,2,3090.0
+454,1766,City Centre,Clothing,331,3,20.33,2023-11-07,Cash,No,3,60.99
+455,1661,Suburban,Grocery,361,7,419.27,2024-09-20,Debit Card,No,2,2934.89
+456,1886,Rural,Home Goods,873,10,191.94,2023-10-24,Credit Card,No,2,1919.4
+457,1464,Suburban,Other,730,6,135.19,2023-10-23,Debit Card,Yes,1,811.14
+458,1094,Rural,Clothing,187,9,256.11,2023-03-26,Mobile Payment,Yes,1,2304.99
+459,1052,Suburban,Clothing,839,1,63.34,2023-12-18,Credit Card,Yes,1,63.34
+460,1307,Rural,Other,608,6,222.82,2024-08-03,Debit Card,No,1,1336.92
+461,1634,City Centre,Clothing,219,10,216.59,2024-10-01,Cash,Yes,5,2165.9
+462,1318,Suburban,Grocery,879,7,494.07,2023-05-18,Cash,No,4,3458.49
+463,1709,Suburban,Electronics,259,1,111.48,2024-08-26,Mobile Payment,Yes,5,111.48
+464,1618,Rural,Other,432,9,324.13,2023-02-14,Credit Card,No,5,2917.17
+465,1170,City Centre,Grocery,928,5,11.65,2024-10-10,Credit Card,No,2,58.25
+466,1276,Suburban,Electronics,207,2,265.95,2024-05-07,Debit Card,No,4,531.9
+467,1336,Suburban,Clothing,228,6,433.72,2024-07-06,Cash,Yes,3,2602.32
+468,1074,Rural,Clothing,324,8,404.33,2024-05-07,Credit Card,No,1,3234.64
+469,1009,City Centre,Other,209,2,102.04,2024-10-04,Mobile Payment,Yes,3,204.08
+470,1040,Rural,Grocery,327,1,461.79,2022-11-18,Credit Card,No,1,461.79
+471,1020,Suburban,Clothing,584,4,260.72,2024-08-17,Cash,Yes,3,1042.88
+472,1407,Suburban,Clothing,473,2,207.63,2023-01-24,Debit Card,Yes,4,415.26
+473,1610,Suburban,Home Goods,690,1,17.08,2023-05-21,Cash,Yes,3,17.08
+474,1733,Suburban,Home Goods,439,7,32.73,2023-08-11,Mobile Payment,Yes,2,229.11
+475,1808,City Centre,Clothing,788,6,202.23,2023-08-29,Credit Card,Yes,1,1213.38
+476,1663,Rural,Home Goods,189,8,428.5,2024-10-02,Credit Card,Yes,5,3428.0
+477,1873,City Centre,Clothing,429,4,446.87,2023-05-14,Mobile Payment,No,3,1787.48
+478,1876,Suburban,Electronics,481,4,362.28,2023-01-15,Debit Card,No,3,1449.12
+479,1223,Rural,Electronics,251,1,135.99,2024-07-08,Mobile Payment,No,5,135.99
+480,1857,City Centre,Clothing,469,1,268.53,2024-06-22,Debit Card,No,5,268.53
+481,1522,Rural,Grocery,834,1,308.14,2024-11-05,Debit Card,Yes,5,308.14
+482,1448,Suburban,Clothing,701,8,497.65,2023-04-19,Debit Card,Yes,3,3981.2
+483,1320,City Centre,Home Goods,733,2,226.23,2023-03-08,Mobile Payment,Yes,4,452.46
+484,1800,Suburban,Grocery,766,7,243.33,2024-09-17,Mobile Payment,Yes,5,1703.31
+485,1070,Rural,Home Goods,208,9,343.23,2023-06-04,Mobile Payment,Yes,1,3089.07
+486,1698,Rural,Grocery,670,8,136.88,2023-05-28,Cash,Yes,2,1095.04
+487,1982,Suburban,Electronics,676,2,245.15,2023-07-21,Debit Card,Yes,2,490.3
+488,1096,Suburban,Other,758,4,11.54,2024-05-08,Credit Card,Yes,4,46.16
+489,1369,City Centre,Grocery,768,6,46.55,2024-02-22,Cash,Yes,2,279.3
+490,1908,City Centre,Other,610,8,6.74,2023-02-19,Mobile Payment,Yes,1,53.92
+491,1264,City Centre,Grocery,747,3,202.43,2023-12-24,Credit Card,Yes,3,607.29
+492,1821,City Centre,Electronics,536,6,333.16,2024-09-03,Mobile Payment,Yes,4,1998.96
+493,1594,City Centre,Other,305,8,407.83,2024-02-21,Debit Card,No,4,3262.64
+494,1328,Suburban,Clothing,290,2,419.84,2023-09-19,Mobile Payment,No,5,839.68
+495,1163,Suburban,Grocery,216,6,283.8,2023-07-18,Credit Card,No,3,1702.8
+496,1659,Suburban,Clothing,882,3,34.22,2023-06-11,Cash,No,4,102.66
+497,1641,Suburban,Electronics,761,3,239.86,2023-06-21,Debit Card,Yes,4,719.58
+498,1510,Rural,Home Goods,782,6,151.59,2022-11-22,Debit Card,Yes,2,909.54
+499,1569,City Centre,Clothing,548,4,31.9,2022-12-31,Credit Card,Yes,5,127.6
+500,1239,Suburban,Other,400,4,223.03,2023-07-23,Cash,No,1,892.12
