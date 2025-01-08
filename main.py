@@ -15,7 +15,7 @@ def start_interface():
             print("Invalid input, enter a number with the following options: 1-5...")
 
 def load_data():
-    print("")
+    fileName = input("\n CASE SENSITIVE do not worry about adding .csv in the end \n Enter a .CSV file name: ")
 
 def process_data():
     print("")
