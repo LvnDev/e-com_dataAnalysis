@@ -15,8 +15,7 @@ total_transactions = None #global variable for the processed data of total trans
 
 unique_store_locations = [] #store any found unique store locations in an array...
 unique_product_categories = [] #store any found unique product categories in an array...
-
-
+transaction_details = None
 
 def start_interface():
     print(f"\nPlease select your option \n 1. Load Data \n 2. process data \n 3. visualise data \n 4. export data \n 5. exit program")
@@ -63,7 +62,21 @@ def process_data():
             print("Invalid choice, please pick a number between 1 and 3...")
 
     if usr_option == 1: #add a specific detail using transaction ID
-        print("add input code to retrieve details of specific store using TransactionID...")
+       while True:
+            tid = input("Enter valid TransactionID: ")
+            try:
+                if int(tid) not in loaded_data['TransactionID'].values:
+                    print("TransactionID not found")
+                else:
+                    global transaction_details
+                    details = loaded_data[loaded_data['TransactionID'] == int(tid)]
+                    print(f"Saving Transaction details:\n")
+                    print(details.to_string(index=False))
+                    transaction_details = details.to_string(index=False)
+                    input("Press ENTER to continue...")
+                    break
+            except ValueError:
+                print("invalid TransactionID, please enter a numeric value...")
     elif usr_option == 2: #continue to process without needing to input transaction ID for a specific record.
         global total_transactions
         global unique_store_locations
