@@ -5,8 +5,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import json
 
 from PIL.ImageStat import Global
+from PIL.SpiderImagePlugin import iforms
 from fontTools.varLib.models import nonNone
 
 #all global variables
@@ -19,6 +21,8 @@ transaction_details = None #a transaction of a single record that is used by a u
 
 transactions_by_location = None
 transactions_by_category = None
+
+revenue_by_location = None #total revenue made by location
 
 def start_interface():
     print(f"\nPlease select your option \n 1. Load Data \n 2. process data \n 3. visualise data \n 4. export data \n 5. exit program")
@@ -99,6 +103,8 @@ def process_data():
             print(f"Total transactions: {total_transactions}")
             print(f"Unique stores: {unique_store_locations}")
 
+            for store in unique_store_locations:
+                transactions_by_location = loaded_data[loaded_data['StoreLocation'] == store]
             #transactions in unique stores table
             usr_option = input("Do you want to show table for total transactions in unique stores? (y/n): ")
             if usr_option.lower() == "y":
@@ -110,6 +116,8 @@ def process_data():
                     time.sleep(1.5)
             usr_option = None #reset usr option
 
+            for category in unique_product_categories:
+                transactions_by_category = loaded_data[loaded_data['ProductCategory'] == category]
             #transaction in unique categories table
             usr_option = input("Do you want to show table for total transactions in unique categories? (y/n): ")
             if usr_option.lower() == "y":
@@ -120,9 +128,55 @@ def process_data():
                     print("-" * 150)
                     time.sleep(1.5)
 
+            global revenue_by_location #group all store locations by total revenue.
+            revenue_by_location = loaded_data.groupby('StoreLocation')['TotalPrice'].sum()
+            print(f"Total revenue by store location: ")
+            for store, revenue in revenue_by_location.items():
+                print(f"store: {store} | total revenue: £{revenue:.2f}") #only need 2 decimal points
+
+            summary_of_slaes_for_store()
             input("Press ENTER to continue...")
+            return
         else: #this is quit processing data
             return
+def summary_of_slaes_for_store(): #summary of a sale for specific store.
+    global loaded_data
+    print("\nsummary of sales for specific store location")
+
+    for store in enumerate(unique_store_locations, 1):
+        print(f"Store: {store}") #have user to pick the following store location.
+    while True:
+        try:
+            store_input = int(input("Enter the number of a store location: "))
+            if 1 <= store_input <= len(unique_store_locations):
+                selected_store = unique_store_locations[store_input - 1]
+                break
+            else:
+                print("Invalid store, please pick a number between 1 and 3...")
+        except ValueError:
+            print("Invalid store, please pick a number between 1 and 3...")
+
+    print(f"Generating summary for {selected_store}...\n")
+
+    store_data = loaded_data[loaded_data['StoreLocation'] == selected_store] #match users response with the following store locations array.
+
+    store_total_transactions = store_data['TransactionID'].nunique() #find total number of transactions made
+    store_total_revenue = store_data['TotalPrice'].sum() #add all the total prices in each transaction in store
+    avg_transactions_store = store_total_revenue / total_transactions if total_transactions > 0 else 0 #calculate the average transactions
+    store_total_quantity_sold = store_data['Quantity'].sum() #sum all the quantity sold...
+    store_avg_customer_satisfaction =  store_data['CustomerSatisfaction'].mean() #find the average of customer satisfaction
+    store_payment_method_distribution = store_data['PaymentMethod'].value_counts(normalize=True) * 100 #find the percentage of total payment methods used.
+
+    print(f"summary for {selected_store}: ")
+    print(f"Total transactions: {store_total_transactions}")
+    print(f"Total revenue: {store_total_revenue:.2f}")
+    print(f"Average transactions sales: {avg_transactions_store:.2f}")
+    print(f"total quantity of products sold: {store_total_quantity_sold}")
+    print(f"average customer satisfaction: {store_avg_customer_satisfaction:.2f}")
+    print(f"\npayment method distribution (as percentage):")
+    for method, percentage in store_payment_method_distribution.items(): #display all percentage for payment methods
+        print(f"{method}: {percentage:.2f}%")
+
 def visualise_data():
     print("")
     #conducting some small experiments of making bar chart.
