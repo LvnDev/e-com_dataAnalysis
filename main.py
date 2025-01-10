@@ -13,18 +13,18 @@ from fontTools.varLib.models import nonNone
 
 #all global variables
 loaded_data = None #global variable for the loaded data
-total_transactions = None #global variable for the processed data of total transaction
+total_transactions = None #global variable for the processed data of total transaction (will be used for visualisations)
 
-unique_store_locations = [] #store any found unique store locations in an array...
-unique_product_categories = [] #store any found unique product categories in an array...
-transaction_details = None #a transaction of a single record that is used by a unique transactionID
+unique_store_locations = [] #store any found unique store locations in an array... (will be used for visualisations)
+unique_product_categories = [] #store any found unique product categories in an array... (will be used for visualisations)
+transaction_details = None #a transaction of a single record that is used by a unique transactionID (will be used for visualisations)
 
-transactions_by_location = None
-transactions_by_category = None
+transactions_by_location = None #all transactions by each location (will be used for visualisations)
+transactions_by_category = None #all transactions by each category (will be used for visualisations)
 
-revenue_by_location = None #total revenue made by location
+revenue_by_location = None #total revenue made by location (will be used for visualisations)
 
-export_store_data = [] #to store retail data into JSON file.
+export_store_data = [] #this will be used to store retail data into JSON file.
 
 def start_interface():
     print(f"\nPlease select your option \n 1. Load Data \n 2. process data \n 3. visualise data \n 4. export data \n 5. exit program")
@@ -202,7 +202,7 @@ def export_data():
             json.dump(export_store_data, json_file, indent=4)
         print(f"data successfully exported to '{generate_filename}.json'!")
     except exception as e:
-        print(f"an error has occured during export... {e}")
+        print(f"an error has occurred during export... {e}")
 
     input("Press ENTER to return to main menu...")
 
