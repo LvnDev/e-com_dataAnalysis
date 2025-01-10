@@ -24,6 +24,8 @@ transactions_by_category = None
 
 revenue_by_location = None #total revenue made by location
 
+export_store_data = [] #to store retail data into JSON file.
+
 def start_interface():
     print(f"\nPlease select your option \n 1. Load Data \n 2. process data \n 3. visualise data \n 4. export data \n 5. exit program")
     while True: #will continue to repeat if user continuously fail choosing the correct option.
@@ -134,13 +136,13 @@ def process_data():
             for store, revenue in revenue_by_location.items():
                 print(f"store: {store} | total revenue: £{revenue:.2f}") #only need 2 decimal points
 
-            summary_of_slaes_for_store()
+            summary_of_sales_for_store()
             input("Press ENTER to continue...")
             return
         else: #this is quit processing data
             return
-def summary_of_slaes_for_store(): #summary of a sale for specific store.
-    global loaded_data
+def summary_of_sales_for_store(): #summary of a sale for specific store.
+    global loaded_data, export_store_data
     print("\nsummary of sales for specific store location")
 
     for store in enumerate(unique_store_locations, 1):
@@ -167,15 +169,18 @@ def summary_of_slaes_for_store(): #summary of a sale for specific store.
     store_avg_customer_satisfaction =  store_data['CustomerSatisfaction'].mean() #find the average of customer satisfaction
     store_payment_method_distribution = store_data['PaymentMethod'].value_counts(normalize=True) * 100 #find the percentage of total payment methods used.
 
-    print(f"summary for {selected_store}: ")
-    print(f"Total transactions: {store_total_transactions}")
-    print(f"Total revenue: {store_total_revenue:.2f}")
-    print(f"Average transactions sales: {avg_transactions_store:.2f}")
-    print(f"total quantity of products sold: {store_total_quantity_sold}")
-    print(f"average customer satisfaction: {store_avg_customer_satisfaction:.2f}")
-    print(f"\npayment method distribution (as percentage):")
-    for method, percentage in store_payment_method_distribution.items(): #display all percentage for payment methods
-        print(f"{method}: {percentage:.2f}%")
+    summary_data_of_store = {
+        "StoreLocation": str(selected_store),
+        "TotalTransactions": int(store_total_transactions),
+        "TotalRevenue": round(float(store_total_revenue), 2),
+        "AverageTransactionsSold": round(float(avg_transactions_store), 2),
+        "TotalQuantitySold": int(store_total_quantity_sold),
+        "AverageCustomerSatisfaction": round(float(store_avg_customer_satisfaction), 2),
+        "PaymentMethodDistribution": {str(k): round(float(v), 2) for k, v in store_payment_method_distribution.items()},
+    }
+    export_store_data.append(summary_data_of_store)
+    print("Summary:")
+    print(json.dumps(summary_data_of_store, indent=4))
 
 def visualise_data():
     print("")
@@ -184,7 +189,22 @@ def visualise_data():
     plt.bar(category_sums.index, category_sums.values)
     plt.show()'''
 def export_data():
-    print("")
+    global export_store_data
+    print("\nExport data...")
+
+    if not export_store_data:
+        print("No export data to export... please process the data before exporting.")
+        input("Press ENTER to continue...")
+        return
+    generate_filename = input("Enter the filename for the export (e.g, 'summary_data') \n")
+    try:
+        with open(f"{generate_filename}.json", "w") as json_file:
+            json.dump(export_store_data, json_file, indent=4)
+        print(f"data successfully exported to '{generate_filename}.json'!")
+    except exception as e:
+        print(f"an error has occured during export... {e}")
+
+    input("Press ENTER to return to main menu...")
 
 #user pick the following option
 while True: #added a while so that it wouldn't exit the program if user wants to perform more actions in the other options...
