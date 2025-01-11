@@ -1,9 +1,11 @@
 import time
+from locale import windows_locale
 from logging import exception
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import tkinter as tk
 import os
 import json
 
@@ -182,12 +184,10 @@ def summary_of_sales_for_store(): #summary of a sale for specific store.
     print("Summary:")
     print(json.dumps(summary_data_of_store, indent=4))
 
-def visualise_data():
-    print("")
-    #conducting some small experiments of making bar chart.
-    '''category_sums = loaded_data.groupby("ProductCategory")['Quantity'].sum()
-    plt.bar(category_sums.index, category_sums.values)
-    plt.show()'''
+def load_gui():
+    print("Loading GUI...")
+    time.sleep(1)
+    gui_main()
 def export_data():
     global export_store_data
     print("\nExport data...")
@@ -206,6 +206,31 @@ def export_data():
 
     input("Press ENTER to return to main menu...")
 
+def gui_main():
+    root = tk.Tk()
+    root.title("Visual Data Analysis")
+    welcomeLbl = tk.Label(root, text="Welcome to Data Analysis Project")
+    empty = tk.Label(root, text="")
+    quitBtn = tk.Button(root, text="quit", command=root.destroy)
+    #visual buttons
+    revenueBtn = tk.Button(root, text="1. revenue contribution") # will display a pie chart
+    total_transactionsBtn = tk.Button(root, text="2. total transactions") # will display a histogram
+    summary_btn = tk.Button(root, text="3. summary insights") #will be used as interactive dashboard
+
+    #grid
+    #row 0
+    welcomeLbl.grid(row=0, column=0, columnspan=3, pady=10)
+    #row 1
+    empty.grid(row=1, column=0)
+    #row 2
+    revenueBtn.grid(row=2, column=0, padx=10, pady=10)
+    total_transactionsBtn.grid(row=2, column=1, padx=10, pady=10)
+    summary_btn.grid(row=2, column=2, padx=10, pady=10)
+    #row 3
+    quitBtn.grid(row=3, column=0, columnspan=3, pady=10)
+    root.mainloop()
+    #run window in loop
+    root.mainloop()
 #user pick the following option
 while True: #added a while so that it wouldn't exit the program if user wants to perform more actions in the other options...
     option = start_interface()
@@ -215,7 +240,7 @@ while True: #added a while so that it wouldn't exit the program if user wants to
     if option == 2:
         process_data()
     if option == 3:
-        visualise_data()
+        load_gui()
     if option == 4:
         export_data()
     if option == 5:
