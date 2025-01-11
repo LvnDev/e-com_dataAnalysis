@@ -12,6 +12,9 @@ import json
 from PIL.ImageStat import Global
 from PIL.SpiderImagePlugin import iforms
 from fontTools.varLib.models import nonNone
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.pyplot import figure
+from PIL import ImageStat
 
 #all global variables
 loaded_data = None #global variable for the loaded data
@@ -28,6 +31,8 @@ revenue_by_location = None #total revenue made by location (will be used for vis
 
 export_store_data = [] #this will be used to store retail data into JSON file.
 
+isPocessed = False #this will change as soon as data has been processed.
+# TEXT INTERFACE
 def start_interface():
     print(f"\nPlease select your option \n 1. Load Data \n 2. process data \n 3. visualise data \n 4. export data \n 5. exit program")
     while True: #will continue to repeat if user continuously fail choosing the correct option.
@@ -59,7 +64,7 @@ def load_data(): #load data
 
 def process_data():
     print("\nentering data processing menu...")
-    global loaded_data
+    global loaded_data, isPocessed
     time.sleep(0.5) #small wait time
     if loaded_data is None: #checking if data is not loaded
         print("No data loaded, please load data first...")
@@ -140,6 +145,7 @@ def process_data():
 
             summary_of_sales_for_store()
             input("Press ENTER to continue...")
+            isPocessed = True
             return
         else: #this is quit processing data
             return
@@ -205,21 +211,26 @@ def export_data():
         print(f"an error has occurred during export... {e}")
 
     input("Press ENTER to return to main menu...")
-
+#GUI
 def gui_main():
+    global loaded_data, isPocessed
+    if isPocessed is False: #checking if data is not loaded
+        print("No data has been processed, please process data first...")
+        input("Press ENTER to continue...")
+        return
     root = tk.Tk()
     root.title("Visual Data Analysis")
     welcomeLbl = tk.Label(root, text="Welcome to Data Analysis Project")
     empty = tk.Label(root, text="")
     quitBtn = tk.Button(root, text="quit", command=root.destroy)
     #visual buttons
-    revenueBtn = tk.Button(root, text="1. revenue contribution") # will display a pie chart
+    revenueBtn = tk.Button(root, text="1. revenue contribution", command=revenuelaunchGUI) # will display a pie chart
     total_transactionsBtn = tk.Button(root, text="2. total transactions") # will display a histogram
     summary_btn = tk.Button(root, text="3. summary insights") #will be used as interactive dashboard
 
     #grid
     #row 0
-    welcomeLbl.grid(row=0, column=0, columnspan=3, pady=10)
+    welcomeLbl.grid(row=0, column=0, columnspan=3, pady=10) #columnspan is to make all columns in column not misaligned.
     #row 1
     empty.grid(row=1, column=0)
     #row 2
@@ -231,7 +242,70 @@ def gui_main():
     root.mainloop()
     #run window in loop
     root.mainloop()
-#user pick the following option
+
+
+def revenuelaunchGUI():
+   global revenue_by_location
+   for store, revenue in revenue_by_location.items():
+       print(f"Store: {store}: £{revenue:.2f}")
+   root = tk.Tk()
+   root.title("Revenue of each store")
+   root.geometry("750x500")
+
+   root.columnconfigure(0, weight=0)
+   root.columnconfigure(1, weight=0)
+   root.columnconfigure(2, weight=0)
+
+   root.rowconfigure(0, weight=0)
+   root.rowconfigure(1, weight=0)
+   root.rowconfigure(2, weight=0)
+
+   def create_pie_chart():
+       global revenue_by_location
+       nonlocal canvas
+
+       if isinstance(revenue_by_location, dict):
+           labels = list(revenue_by_location.keys())
+           values = list(revenue_by_location.values())
+       else:
+            labels = revenue_by_location.index.tolist()
+            values = revenue_by_location.values.tolist()
+
+       total_revenue = sum(values)
+       def format(pct, allvals):
+           absolute = round(pct / 100*sum(allvals), 2)
+           return f"{pct:.1f}%\n£{absolute}"
+
+       fig, ax = plt.subplots(figsize=(8, 6))
+       ax.pie(values, labels=labels, autopct=lambda pct: format(pct, values),startangle=90)
+       ax.set_title(f"Revenue by Location (total: £{total_revenue:.2f})")
+       ax.axis('equal')
+
+       if canvas:
+           canvas.get_tk_widget().destroy()
+       canvas = FigureCanvasTkAgg(fig, master=root)
+       canvas.get_tk_widget().grid(row=2, column=0, padx=10, pady=10, columnspan=3)
+       canvas.draw()
+
+   titleLbl = tk.Label(root, text="Revenue of each store pie chart", font=("Arial", 20), fg="blue")
+   empty = tk.Label(root, text="")
+   createBtn = tk.Button(root, text="create Pie chart", command=create_pie_chart)
+   saveBtn = tk.Button(root, text="save Pie chart")
+   backBtn = tk.Button(root, text="Back")
+
+   #grid row 0
+   titleLbl.grid(row=0, column=0, columnspan=3, sticky="nsew", padx=10, pady=5)
+   createBtn.grid(row=1, column=0,padx=10, pady=5)
+   saveBtn.grid(row=1, column=1,padx=10, pady=5)
+   backBtn.grid(row=1, column=2, padx=10, pady=5 )
+
+   canvas = None
+
+
+   root.mainloop()
+#main: user will be prompted into a text based selection screen to choose their option.
+
+
 while True: #added a while so that it wouldn't exit the program if user wants to perform more actions in the other options...
     option = start_interface()
 
