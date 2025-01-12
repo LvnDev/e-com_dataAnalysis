@@ -1,326 +1,163 @@
+import csv
 import time
-from locale import windows_locale
-from logging import exception
-
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+import json
 import tkinter as tk
 import os
-import json
+from gui import launch_gui
 
-from PIL.ImageStat import Global
-from PIL.SpiderImagePlugin import iforms
-from fontTools.varLib.models import nonNone
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib.pyplot import figure
-from PIL import ImageStat
+# Global variables
+loaded_data = None
+total_transactions = None
+unique_store_locations = []
+unique_product_categories = []
+transaction_details = None
+transactions_by_location = None
+transactions_by_category = None
+revenue_by_location = {}
+export_store_data = []
+isProcessed = False
 
-#all global variables
-loaded_data = None #global variable for the loaded data
-total_transactions = None #global variable for the processed data of total transaction (will be used for visualisations)
 
-unique_store_locations = [] #store any found unique store locations in an array... (will be used for visualisations)
-unique_product_categories = [] #store any found unique product categories in an array... (will be used for visualisations)
-transaction_details = None #a transaction of a single record that is used by a unique transactionID (will be used for visualisations)
-
-transactions_by_location = None #all transactions by each location (will be used for visualisations)
-transactions_by_category = None #all transactions by each category (will be used for visualisations)
-
-revenue_by_location = None #total revenue made by location (will be used for visualisations)
-
-export_store_data = [] #this will be used to store retail data into JSON file.
-
-isPocessed = False #this will change as soon as data has been processed.
-# TEXT INTERFACE
+# Text Interface
 def start_interface():
-    print(f"\nPlease select your option \n 1. Load Data \n 2. process data \n 3. visualise data \n 4. export data \n 5. exit program")
-    while True: #will continue to repeat if user continuously fail choosing the correct option.
+    print("\nPlease select your option:")
+    print("1. Load Data")
+    print("2. Process Data")
+    print("3. Visualize Data (GUI)")
+    print("4. Export Data")
+    print("5. Exit Program")
+
+    while True:
         try:
             usr_choice = int(input("Enter your choice: "))
             if 1 <= usr_choice <= 5:
                 return usr_choice
             else:
-                print("Invalid choice, please pick the number between 1 and 5...")
-        except ValueError: #catch if any input was not integer.
-            print("Invalid input, enter a number with the following options: 1-5...")
+                print("Invalid choice, please pick a number between 1 and 5.")
+        except ValueError:
+            print("Invalid input, enter a number between 1 and 5.")
 
-def load_data(): #load data
-    filename = input("\n CASE SENSITIVE do not worry about adding .csv in the end \n Enter a .CSV file name: ")
+
+def load_data():
     global loaded_data
-    try: #if no issues will continue as normal
-        loaded_data = pd.read_csv(f"{filename}.csv")
-        print(f"{loaded_data.head()}")
-        input("Press ENTER to continue...")
-        return
-    except FileNotFoundError: #if not found then user returns to the options screen again
-        print("File not found")
-        input("Press ENTER to continue...")
-        return
-    except Exception as e: #if some error happens the exception will pop up here and explain what the error may be.
-        print(f"unexpected error: {e}")
-        input("Press ENTER to continue...")
-        return
+    filename = input("\nEnter the filename of the CSV (case sensitive, without .csv extension): ")
+    try:
+        with open(f"{filename}.csv", "r") as file:
+            csv_reader = csv.DictReader(file)
+            loaded_data = list(csv_reader)
+            print("Data loaded successfully.")
+    except FileNotFoundError:
+        print("File not found.")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+    input("Press ENTER to continue...")
+
 
 def process_data():
-    print("\nentering data processing menu...")
-    global loaded_data, isPocessed
-    time.sleep(0.5) #small wait time
-    if loaded_data is None: #checking if data is not loaded
+    print("\nEntering data processing menu...")
+    global loaded_data, isProcessed, revenue_by_location
+    time.sleep(0.5)  # Small wait time
+    if loaded_data is None:  # Checking if data is not loaded
         print("No data loaded, please load data first...")
         input("Press ENTER to continue...")
         return
     else:
-        while True:
-            try: #small validation to prevent user stopping the program.
-                print(f"\n select an option... \n 1. retrieve details of specific store using TransactionID \n 2. continue to process data \n 3. exit processing of data")
-                usr_option = int(input("Enter your choice: "))
-                if 1 <= usr_option <=3:
-                    break;
-                else:
-                    print("Invalid choice, please pick the number between 1 and 3...")
-            except ValueError:
-                print("Invalid choice, please pick a number between 1 and 3...")
+        print("Processing data to calculate summary metrics...")
 
-        if usr_option == 1: #add specific record using transaction ID
-            while True:
-                tid = input("Enter valid TransactionID: ")
-                try:
-                    if int(tid) not in loaded_data['TransactionID'].values:
-                        print("TransactionID not found")
-                    else:
-                        global transaction_details
-                        details = loaded_data[loaded_data['TransactionID'] == int(tid)] #match the transaction ID in the record
-                        print(f"Saving Transaction details:\n")
-                        print(details.to_string(index=False)) #prints into a full row of the matching transaction ID
-                        transaction_details = details.to_string(index=False)
-                        input("Press ENTER to continue...")
-                        return process_data() #will return to processing selection option screen
-                except ValueError:
-                    print("invalid TransactionID, please enter a numeric value...")
-        elif usr_option == 2: #continue to process without needing to input transaction ID for a specific record.
-            global total_transactions
-            global unique_store_locations
-            global unique_product_categories
+        global total_transactions
+        global unique_store_locations
+        global unique_product_categories
+        global transactions_by_location
+        global transactions_by_category
 
-            global transactions_by_location
-            global transactions_by_category
-            usr_option = None #reset usr options
-            total_transactions = loaded_data['TransactionID'].nunique() #number of unique. will count upto how many records
-            unique_store_locations = loaded_data['StoreLocation'].unique() #will store all store locations into an array.
-            unique_product_categories = loaded_data['ProductCategory'].unique() #will store all product category into an array
-            print(f"Total transactions: {total_transactions}")
-            print(f"Unique stores: {unique_store_locations}")
+        total_transactions = len({row['TransactionID'] for row in loaded_data})  # Count unique transactions
+        print(f"Total transactions: {total_transactions}")
 
-            for store in unique_store_locations:
-                transactions_by_location = loaded_data[loaded_data['StoreLocation'] == store]
-            #transactions in unique stores table
-            usr_option = input("Do you want to show table for total transactions in unique stores? (y/n): ")
-            if usr_option.lower() == "y":
-                for store in unique_store_locations:
-                    transactions_by_location = loaded_data[loaded_data['StoreLocation'] == store]
-                    print(f"\nStore: {store}")
-                    print(transactions_by_location.to_string(index=False))
-                    print("-" * 150)
-                    time.sleep(1.5)
-            usr_option = None #reset usr option
+        unique_store_locations = list({row['StoreLocation'] for row in loaded_data})
+        print(f"Unique store locations found: {unique_store_locations}")
 
-            for category in unique_product_categories:
-                transactions_by_category = loaded_data[loaded_data['ProductCategory'] == category]
-            #transaction in unique categories table
-            usr_option = input("Do you want to show table for total transactions in unique categories? (y/n): ")
-            if usr_option.lower() == "y":
-                for category in unique_product_categories:
-                    transactions_by_category = loaded_data[loaded_data['ProductCategory'] == category]
-                    print(f"\nCategory: {category}")
-                    print(transactions_by_category.to_string(index=False))
-                    print("-" * 150)
-                    time.sleep(1.5)
+        unique_product_categories = list({row['ProductCategory'] for row in loaded_data})
+        print(f"Unique product categories found: {unique_product_categories}")
 
-            global revenue_by_location #group all store locations by total revenue.
-            revenue_by_location = loaded_data.groupby('StoreLocation')['TotalPrice'].sum()
-            print(f"Total revenue by store location: ")
-            for store, revenue in revenue_by_location.items():
-                print(f"store: {store} | total revenue: £{revenue:.2f}") #only need 2 decimal points
+        print("\nProcessing transactions by location...")
+        transactions_by_location = {}
+        for store in unique_store_locations:
+            transactions_by_location[store] = [
+                row for row in loaded_data if row['StoreLocation'] == store
+            ]
 
-            summary_of_sales_for_store()
-            input("Press ENTER to continue...")
-            isPocessed = True
-            return
-        else: #this is quit processing data
-            return
-def summary_of_sales_for_store(): #summary of a sale for specific store.
-    global loaded_data, export_store_data
-    print("\nsummary of sales for specific store location")
+        print("\nProcessing transactions by category...")
+        transactions_by_category = {}
+        for category in unique_product_categories:
+            transactions_by_category[category] = [
+                row for row in loaded_data if row['ProductCategory'] == category
+            ]
 
-    for store in enumerate(unique_store_locations, 1):
-        print(f"Store: {store}") #have user to pick the following store location.
-    while True:
-        try:
-            store_input = int(input("Enter the number of a store location: "))
-            if 1 <= store_input <= len(unique_store_locations):
-                selected_store = unique_store_locations[store_input - 1]
-                break
-            else:
-                print("Invalid store, please pick a number between 1 and 3...")
-        except ValueError:
-            print("Invalid store, please pick a number between 1 and 3...")
+        print("\nCalculating revenue by location...")
+        revenue_by_location = {}
+        for store in unique_store_locations:
+            total_revenue = sum(
+                float(row['TotalPrice']) for row in transactions_by_location[store]
+                if row['TotalPrice'].replace('.', '', 1).isdigit()
+            )
+            revenue_by_location[store] = total_revenue
+            print(f"Revenue calculated for store {store}: £{total_revenue:.2f}")
 
-    print(f"Generating summary for {selected_store}...\n")
+        print("\nData processing completed successfully.")
+        isProcessed = True
+        input("Press ENTER to continue...")
 
-    store_data = loaded_data[loaded_data['StoreLocation'] == selected_store] #match users response with the following store locations array.
-
-    store_total_transactions = store_data['TransactionID'].nunique() #find total number of transactions made
-    store_total_revenue = store_data['TotalPrice'].sum() #add all the total prices in each transaction in store
-    avg_transactions_store = store_total_revenue / total_transactions if total_transactions > 0 else 0 #calculate the average transactions
-    store_total_quantity_sold = store_data['Quantity'].sum() #sum all the quantity sold...
-    store_avg_customer_satisfaction =  store_data['CustomerSatisfaction'].mean() #find the average of customer satisfaction
-    store_payment_method_distribution = store_data['PaymentMethod'].value_counts(normalize=True) * 100 #find the percentage of total payment methods used.
-
-    summary_data_of_store = {
-        "StoreLocation": str(selected_store),
-        "TotalTransactions": int(store_total_transactions),
-        "TotalRevenue": round(float(store_total_revenue), 2),
-        "AverageTransactionsSold": round(float(avg_transactions_store), 2),
-        "TotalQuantitySold": int(store_total_quantity_sold),
-        "AverageCustomerSatisfaction": round(float(store_avg_customer_satisfaction), 2),
-        "PaymentMethodDistribution": {str(k): round(float(v), 2) for k, v in store_payment_method_distribution.items()},
-    }
-    export_store_data.append(summary_data_of_store)
-    print("Summary:")
-    print(json.dumps(summary_data_of_store, indent=4))
 
 def load_gui():
-    print("Loading GUI...")
-    time.sleep(1)
-    gui_main()
-def export_data():
-    global export_store_data
-    print("\nExport data...")
-
-    if not export_store_data:
-        print("No export data to export... please process the data before exporting.")
+    global isProcessed, revenue_by_location
+    if not isProcessed:
+        print("No data processed. Please process data first.")
         input("Press ENTER to continue...")
         return
-    generate_filename = input("Enter the filename for the export (e.g, 'summary_data') \n")
+
+    print("Launching GUI...")
+    launch_gui(revenue_by_location)  # Start the GUI
+
+    # Start Tkinter main loop after launching the GUI
+    # This ensures the program waits for the GUI to be closed before continuing
+    # No need to return here until the GUI is closed
+    return
+
+
+def export_data():
+    global revenue_by_location, isProcessed
+
+    if not isProcessed:
+        print("No data processed. Please process data first.")
+        input("Press ENTER to continue...")
+        return
+
+    print("\nExporting data...")
+    generate_filename = input("Enter the filename for export (e.g., 'summary_data'): ")
     try:
         with open(f"{generate_filename}.json", "w") as json_file:
-            json.dump(export_store_data, json_file, indent=4)
-        print(f"data successfully exported to '{generate_filename}.json'!")
-    except exception as e:
-        print(f"an error has occurred during export... {e}")
+            json.dump(revenue_by_location, json_file, indent=4)
+        print(f"Data successfully exported to '{generate_filename}.json'!")
+    except Exception as e:
+        print(f"An error occurred during export: {e}")
 
-    input("Press ENTER to return to main menu...")
-#GUI
-def gui_main():
-    global loaded_data, isPocessed
-    if isPocessed is False: #checking if data is not loaded
-        print("No data has been processed, please process data first...")
-        input("Press ENTER to continue...")
-        return
-    root = tk.Tk()
-    root.title("Visual Data Analysis")
-    welcomeLbl = tk.Label(root, text="Welcome to Data Analysis Project")
-    empty = tk.Label(root, text="")
-    quitBtn = tk.Button(root, text="quit", command=root.destroy)
-    #visual buttons
-    revenueBtn = tk.Button(root, text="1. revenue contribution", command=revenuelaunchGUI) # will display a pie chart
-    total_transactionsBtn = tk.Button(root, text="2. total transactions") # will display a histogram
-    summary_btn = tk.Button(root, text="3. summary insights") #will be used as interactive dashboard
-
-    #grid
-    #row 0
-    welcomeLbl.grid(row=0, column=0, columnspan=3, pady=10) #columnspan is to make all columns in column not misaligned.
-    #row 1
-    empty.grid(row=1, column=0)
-    #row 2
-    revenueBtn.grid(row=2, column=0, padx=10, pady=10)
-    total_transactionsBtn.grid(row=2, column=1, padx=10, pady=10)
-    summary_btn.grid(row=2, column=2, padx=10, pady=10)
-    #row 3
-    quitBtn.grid(row=3, column=0, columnspan=3, pady=10)
-    root.mainloop()
-    #run window in loop
-    root.mainloop()
+    input("Press ENTER to return to the main menu...")
 
 
-def revenuelaunchGUI():
-   global revenue_by_location
-   for store, revenue in revenue_by_location.items():
-       print(f"Store: {store}: £{revenue:.2f}")
-   root = tk.Tk()
-   root.title("Revenue of each store")
-   root.geometry("750x500")
-
-   root.columnconfigure(0, weight=0)
-   root.columnconfigure(1, weight=0)
-   root.columnconfigure(2, weight=0)
-
-   root.rowconfigure(0, weight=0)
-   root.rowconfigure(1, weight=0)
-   root.rowconfigure(2, weight=0)
-
-   def create_pie_chart():
-       global revenue_by_location
-       nonlocal canvas
-
-       if isinstance(revenue_by_location, dict):
-           labels = list(revenue_by_location.keys())
-           values = list(revenue_by_location.values())
-       else:
-            labels = revenue_by_location.index.tolist()
-            values = revenue_by_location.values.tolist()
-
-       total_revenue = sum(values)
-       def format(pct, allvals):
-           absolute = round(pct / 100*sum(allvals), 2)
-           return f"{pct:.1f}%\n£{absolute}"
-
-       fig, ax = plt.subplots(figsize=(8, 6))
-       ax.pie(values, labels=labels, autopct=lambda pct: format(pct, values),startangle=90)
-       ax.set_title(f"Revenue by Location (total: £{total_revenue:.2f})")
-       ax.axis('equal')
-
-       if canvas:
-           canvas.get_tk_widget().destroy()
-       canvas = FigureCanvasTkAgg(fig, master=root)
-       canvas.get_tk_widget().grid(row=2, column=0, padx=10, pady=10, columnspan=3)
-       canvas.draw()
-
-   titleLbl = tk.Label(root, text="Revenue of each store pie chart", font=("Arial", 20), fg="blue")
-   empty = tk.Label(root, text="")
-   createBtn = tk.Button(root, text="create Pie chart", command=create_pie_chart)
-   saveBtn = tk.Button(root, text="save Pie chart")
-   backBtn = tk.Button(root, text="Back")
-
-   #grid row 0
-   titleLbl.grid(row=0, column=0, columnspan=3, sticky="nsew", padx=10, pady=5)
-   createBtn.grid(row=1, column=0,padx=10, pady=5)
-   saveBtn.grid(row=1, column=1,padx=10, pady=5)
-   backBtn.grid(row=1, column=2, padx=10, pady=5 )
-
-   canvas = None
-
-
-   root.mainloop()
-#main: user will be prompted into a text based selection screen to choose their option.
-
-
-while True: #added a while so that it wouldn't exit the program if user wants to perform more actions in the other options...
+# Main program loop
+while True:
     option = start_interface()
 
     if option == 1:
         load_data()
-    if option == 2:
+    elif option == 2:
         process_data()
-    if option == 3:
+    elif option == 3:
         load_gui()
-    if option == 4:
+    elif option == 4:
         export_data()
-    if option == 5:
+    elif option == 5:
         print("Exiting program...")
         time.sleep(1)
-        exit()
-
-
-
+        break
