@@ -1,11 +1,9 @@
-#gui.py
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-
 
 def launch_gui(revenue_data, loaded_data):
     if not revenue_data or not isinstance(revenue_data, dict):

@@ -1,4 +1,3 @@
-#main.py
 import csv
 import json
 
@@ -23,7 +22,7 @@ isProcessed = False #will turn true once all data has been processed.
 
 
 # Text Interface
-def start_interface():
+def start_interface(usr_choice=None):
     #user option selection
     print("\nPlease select your option:")
     print("1. Load Data")
@@ -44,7 +43,7 @@ def start_interface():
             print("Invalid input, enter a number between 1 and 5.") #incase they did not put a interger value
 
 
-def load_data():
+def load_data(filename=None):
     global loaded_data
     filename = input("\nEnter the filename of the CSV (case sensitive, without .csv extension): ")
     try:
@@ -85,23 +84,7 @@ def process_data():
                 print("Invalid choice, please pick a number between 1 and 3...")
 
         if usr_option == 1:  # Retrieve specific transaction details
-            while True:
-                tid = input("Enter valid TransactionID: ")
-                try:
-                    print(f"Searching for TransactionID {tid}...")
-                    transaction = next((row for row in loaded_data if row['TransactionID'] == tid), None)
-                    if not transaction:
-                        print("TransactionID not found.")
-                    else:
-                        transaction_details = transaction
-                        print(f"Transaction found! Details for Transaction ID {tid}:")
-                        for key, value in transaction_details.items():
-                            print(f"{key}: {value}")
-                        input("Press ENTER to continue...")
-                        return process_data()  # Return to processing menu
-                except ValueError:
-                    print("Invalid TransactionID, please enter a numeric value.")
-
+             find_transaction_details()
         elif usr_option == 2:  # Continue to process data (revenue calculations)
             print("Processing data to calculate summary metrics...")
 
@@ -167,6 +150,24 @@ def process_data():
             return
         else:  # Quit processing data
             return
+
+def find_transaction_details():
+    while True:
+        tid = input("Enter valid TransactionID: ")
+        try:
+            print(f"Searching for TransactionID {tid}...")
+            transaction = next((row for row in loaded_data if row['TransactionID'] == tid), None)
+            if not transaction:
+                print("TransactionID not found.")
+            else:
+                transaction_details = transaction
+                print(f"Transaction found! Details for Transaction ID {tid}:")
+                for key, value in transaction_details.items():
+                    print(f"{key}: {value}")
+                input("Press ENTER to continue...")
+                return process_data()  # Return to processing menu
+        except ValueError:
+            print("Invalid TransactionID, please enter a numeric value.")
 
 def load_gui():
     global isProcessed, revenue_by_location, loaded_data
