@@ -73,8 +73,7 @@ def process_data():
 
         while True:
             try:
-                print(
-                    f"\nSelect an option:\n1. Retrieve details of a specific store using TransactionID\n2. Continue to process data\n3. Exit processing of data")
+                print(f"\nSelect an option:\n1. Retrieve details of a specific transaction using TransactionID\n2. Continue to process data\n3. Exit processing of data")
                 usr_option = int(input("Enter your choice: "))
                 if 1 <= usr_option <= 3:
                     break
@@ -171,16 +170,16 @@ def find_transaction_details():
 
 def load_gui():
     global isProcessed, revenue_by_location, loaded_data
-    if not isProcessed:
-        print("No data processed. Please process data first.")
+    if not loaded_data:
+        print("No data loaded. Please load data first.")
         input("Press ENTER to continue...")
         return
 
     print("Loading GUI...")
 
-    # Ensure the data is valid before passing it to the GUI
-    if not revenue_by_location:
-        print("Revenue data is missing, cannot proceed to GUI.")
+    # Ensure the data is processed before loading into gui
+    if not isProcessed:
+        print("data was not processed yet, cannot proceed to GUI.")
         input("Press ENTER to continue...")
         return
 
