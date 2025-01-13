@@ -1,3 +1,4 @@
+#gui.py
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
@@ -20,7 +21,7 @@ def launch_gui(revenue_data, loaded_data):
     root.geometry("900x700")  # You can adjust the window size here
 
     def show_pie_chart(frame):
-        """Displays a pie chart of revenue contributions by store location."""
+        #Displays Pie chart diagram of revenue of each locations with percentages.
         # Clear existing content in the frame
         for widget in frame.winfo_children():
             widget.destroy()
